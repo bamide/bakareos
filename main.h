@@ -25,7 +25,7 @@ char *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 int is_builtin_command(char *command);
 void execute_builtin_command(char *command, char **args, char **argv,
-	char *env[]);
+char *env[]);
 int shell_exit(char *command, char **args, char **argv);
 int isnumber(char *s);
 char *get_path(char **env);
@@ -36,5 +36,8 @@ int handle_path(char **arrayStr, char **argv, char **env);
 void command_not_found(char **arrayStr, char **argv);
 char *_strdup(const char* str);
 void *_memcpy(void *dest, const void *src, size_t size);
+void execute_command(char **token_array);
+void set_environment_variable(char **token_array);
+void unset_environment_variable(char **token_array);
 
 #endif
