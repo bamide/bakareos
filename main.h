@@ -12,6 +12,7 @@
 #define MAX_INPUT_LENGTH 1024
 #define BUFFSIZE_STD 128
 #define DELIM " \t\r\a\n"
+#define MAX_TOKENS 100   
 
 int prompt(int argc, char **argv, char **env);
 char *getLine(char *buffer, int status);
