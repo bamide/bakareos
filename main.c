@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
  while (1)
  {
-  write(STDOUT_FILENO, "#MayBaksMshell$ ", 9);
+  write(STDOUT_FILENO, "#BMshell$ ", 9);
   nread = getline(&line, &len, stdin);
   if (nread == -1)
   {
