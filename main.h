@@ -9,10 +9,17 @@
 #include <sys/types.h>
 #include <signal.h>
 
-#define MAX_INPUT_LENGTH 1024
+#define MAX_INPUT_LENGTH 1024 
+#define MAX_LINE_LENGTH 104
 #define BUFFSIZE_STD 128
 #define DELIM " \t\r\a\n"
 #define MAX_TOKENS 100   
+
+typedef struct Alias {
+    char *name;
+    char *value;
+    struct Alias *next;
+} Alias;
 
 int prompt(int argc, char **argv, char **env);
 char *getLine(char *buffer, int status);
@@ -39,5 +46,6 @@ void *_memcpy(void *dest, const void *src, size_t size);
 void execute_command(char **token_array);
 void set_environment_variable(char **token_array);
 void unset_environment_variable(char **token_array);
+void display_non_interactive(char **av);
 
 #endif
