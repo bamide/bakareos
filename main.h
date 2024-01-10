@@ -47,5 +47,10 @@ void execute_command(char **token_array);
 void set_environment_variable(char **token_array);
 void unset_environment_variable(char **token_array);
 void display_non_interactive(char **av);
+void write_output(const char *output);
+void print_aliases();
+Alias *find_alias(char *name);
+void add_alias(char *name, char *value);
+void free_aliases();
 
 #endif
